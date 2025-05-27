@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BUGATTI</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAACUCAMAAABV5TcGAAABHVBMVEX////bHDAAAADXAADbFCvdNEDzyMvbGS7mHTOEER3bHTLeHDEHAQEdHR0nJyfiHTH43uDbDCb0zc+2trbgTFdoDRf88PHeQU4zBgvPz8+oFiX66On++vrYAAruHjSqqqromp/CwsKRkZEdBAaVEyHOGy2xFifZABTk5OTaAB7DGStkZGTyvcDvrbFXCxP21dfngIdMCRFGRkacnJzldHzoiY/qlJbhV2HjaHHspKZBCQ53DxomBQjiYWbkLT59fX3dRUTbLy9VVVU5OTnfVlXIiIy0AADDO0XDb3TGABOerq5qKCuVe3yuAA+WAABSAADNuroSJyYAFBN/LDKfYGSEAAB+XV06HR9/AAuwoKHbs7SoLzmVJi9kAACeS03I2PjGAAAcPklEQVR4nOVdi3ubSJIHgUBGSQyEINughMSWMQ4EecLTtjzOxDv32r3dud2729u7vf//z7iqfvAQSPJDcjJz9eXLJ0tN0/3rquqq6upuQXhmcp1YCaMyS5Mit4AmE4vThH7Oi2SeZmWoxLrtPnfzdk2u69quq5uRN19Yw6FVzDf31LUJZtm8yCdDazH3IlMn1fyK0XFt23F0JcqS3MrnXmg6j+yM65ihN4dKkiwyHcexf2U8A4Or63FYzosiLUPdXv6Zf3B0jpCt81LwqNMpKPBSUOcC6zR13fk1gOI6ehwDmyeJF8bLONACYaSQDruhZUw88jFORDmJ8ZOT3ci5Qko6Ciu4THYcQv1ZpMSx/liOewaydQUE3kvTqAOEbYahiS13FUuSpIUOH0vJkA0pgaKm6MuyL5oAQQFfBlIIP5ukYMyfjjusAqAQhat02O+bE4o3ThdZqDearSusF7anSpJcwmfd8jVRkxauYEuqKIpqAF1fGPBJNBaCEE3JJxkeGUJBUSqAP+zMl6RhRGuKwybLuIBJVkbh4xXT9gm4OopK0P5LoxQWcmCV2PjSkEVN9iP4ToJOAh66oJBPolQK9h2F4862U18kP9vsZ9UHwcmmqqgZX5BlnGwS3CRm+z02zFolNKFftJ6VbCXCljSYQo+8iLRLN3xVDQzgCXcRkP5aghtJtL+KEFdwuBUcbjblcJSsYCi4Qxk/BgkwQxYYqjwdEtwd/iIkYBMck0j5hoKjR4RRm/LhKgtjKhaoG+ZT7G8AekLPSX/lW7fBHa6BXxoaDP88UFFs5iAswEaiFkxAdVDuCBRBJ3BoAQiYaRnkaWAzIV6oU5XqFkYgSCiwkf7MMJB+x14WgTnFRsOJaSOcia9q8hQV5IRiMFEEm3KHDL3U8ynqjgIQVAIp8H0PSjq5FARSjmoinfqBdAOdtCdEdySO4N5S7ihA1G4qRnFyECF1uqD8EfN2ICRlmnUU726xUGD6MONKfdke2NsIAYw+tleF0Re4hEDfPBx0dYqDauYwYRDuEcy0mIekG3pZFCX5zo6SwiNDHlu8IFEoRHeEVG6mKYBJXiRKWNYpLGtR8saAWjejeao8FyJmmoDR3BTS0ggMI7CgKVzkTc7u07mLcEHXJM+ljQ1jJvJ2ZUq5DocWTDjOcCbMF6RYCg/7OLPYyZTU7nAlJEohfH2Lb1ejRoNs3SyT+ZLK3QXpaV5ytogyOvsRkdZE0I+VbsBBy6SpL+Vk0F09DB8+FVbMVz0d30r+lJol9YvIEGjBgrFXFtKHnNjL093qkXKSxnxE9VvQ8rc4ApGsch7WbwKiG3CEXT2dh1tmWTuaZ6SLDjFgpqhwmKIeIgzhrQyNYvzl2sr8ptxuA2qKc0up/Qj3NlBhIr2DV0daBYcQy8DZd2sGhTr4XjpHB38y1GTQp5wMcTix8kWSpJ4HatpZN2vGN/CiIXJhEXCdDUNEGmXVbwN9k8era3ksueUwbbWOYiAj+nEesNkTC4al2WUJBzy6tLBUidDU94MABN4wZFltkizjl/CbDzJBi2pWkpVKj//jKiVVDlRAfTRgU5k2qqU17EQut8qkrp5YIesXKPwh+liZSoxsGVkiktH9mHcec12wWNNiQnvmB4asakDiPQnLqrIR+PT5SZGBN9QT9LDA5QmIrCSEUVQN1WqoSVRo8fMk0beECEhgkXDzz5ZAZAM5RO7ASU/WiGyai+Ekaj5i23GULTQyvmBJ3h+C1dCoRkA4Zlhk4CzbTVS84bAgEtHgjkgyNI0ZsEBxsYi3EBIAhzzJak4lpqY2BXjsuwC0VnDXdhQw5hOHKQFiGoCn8lQYOrCIMkHlpvBCvRMJiiegO+QAnEF9QQW4HiQ7TR4xu7UIjLwEJ9PKGqCmJrGtlDtN1u6URmFHj6N5HqBYyFvHYQkVwipynobtmEdkafINTrmmVtmyArdwbC+JnmCvutA7ojLsMFmkRD1ZFA6irO0yLSsh0s0wW6iIhPrkvo7H98RERrUCfIKhV9aQ2EuJMWRSA9ZP8EslXTD7tyy6wZj7EfjNKbNoUuilpCIjEJNHnbYmGVsHfWn5yBP37e/sZB0dnYr3BAQJhUdepGE7DOQQA1YlJlvoT4Mp8Y6AonnUM/NtIteMPDaZCCGOOPiZyG8LmCT9eiZ3EYrckHzjIUyxf/5isI4O9rQH4IHdNnyUnEip5w9zMoXpOsE2M9+Zzb4uGNMPBUSPysqgdD3miKBkON48yRgaDvDP4uaBUFA4jtfCMRhc7T+wSpAcgORmkfIolGtmybzEzzyywkcXTFuvfIj1bgMYNnGsyF91UIb8SVWXE3qJFUzvLSAPg2NwNHpEvSg4gTX3QhqbZurfZHDQSYYE6jF0dF8V4oYZqS/EhQHyYYrDb2g1hzloXIFZ9ZgmczheXDD6dICi8+KA/sWAunwUHEhg1E6KNKwNAIdEZWUDdZ+eLgoyKehcMW4iZx4RCQyhv4GPdl0jvk15Z74YBo9iiyYc17NzSrMrhOP4hP19QeC4fspMLQfBEJQrH75SCsBoRvXvLLBPOeLhxuX8HhLjpXQmoiEsNfAEErEVc1Z7OL8bGk80sCgcb8c4pY7Hoz3kiOOj0RhpdEL44/j8Ycq0TWisyUNmHOCKjmoR4ajDkNhDM/E2sYbF49EKs7hyUqFD1Yie3Q1l4wl8weFA6RjN3lxefjofvWVwvN1HertHZp3r2VPgIAQNHVpkesXmk8GkcUYjZ310osna6HuaVApGmdBHa2dZCPMvqiE/3cyC0ZsBjWcgF9cnp+dEWF7snZ8i7V0/UXc0CPw/9UvRMJxvmVHNpcS1rdUMYluNaA2L9xop/9v7gu74FhqJNEYxmX0CFF4cH1MjBD4gMYvk9MEzbT8BIgZbsgIqqOW+qPvsepMVU0xokWlkYlDvMAoCcNZU+pue+P7WsGBE4FhBJ2+39x5VngYpFQp7Gmii/4Xwi5IT10vQh71TzDxDDDOYRPwp9dqHkpRQMHLJ3zIW4lo4Pm0RDSBN9SUao3BzSaKikpHpBpGwi06kBmx8gpFDTJagGU9zzVwKtto6RlRYjpeEheJxsQ3V0SQApGhGgMIhXcEiX5XFUpjCZFF4aoCqYhUmsGMAYzfeOlelp2+IKr0imvTkgoKzt208YJClRe3llaSj3HJXimY40Q2ZbHE4ZAaHrS92BQbC8QZM0qWJdsQk6Hj7cCAgc84hHA7W0TipZxE3qhx2k3hrhmVSMNLdgDHWjo6OTsdoysE/bobRuYSZYdez7SsrIF/yKCDhDQqLKvEpF2xxnolUejWj5FPDCAxcMHN1z/B30STm4OP4k/BzLxzH51uaaZdJ0og3a6dBYAQ0OkR5IqUBEceL0D8NqdNjz3NrgUEusNimTzY/VxAz0vf3mR3KjHTy1+wNFZanW6UryJjm6K7r2cJapIQj9DDERAgPY8J2GqFZIUsGzc4SYlPHRYzk0f7qZqJwUCv0lKvSPfL56IrOLQc7Yg6kQJ5j/Ec36cKQUgSSNncwUGYL6OeCyyqDHOWV3nW8oa/uLvpLHfzLA0qX19TBJ595IGQHM0tNmJVU9/UWbCqZOLxRIpD1XxLQIOvubN6Rd8ca4n3CP5cPiZY+ggI14aZVREwtWcS/6bQbsuwAOuu42e0WwuHraCMcB7tSpBUBg9CpxKX5aKJUWx4Kyw4g3ziFulPWEJmDv5qu93aOBlCgUfc9YmlXtSHuLDBFKRji3GLePiXOdU/STtfQ+eyBcfRHkkwdfT0wMAcjadjp5q00JSlZQvll16yxkcb3XXZ6Kqk0OzPEJfG8FSh0Qhp+nvu7Xk78rkieogXqRF6VgNlagCl24Md/16T6abP/tiAZdfAs34kj/12TOq3t9GgqCZrhs2iQ+/8QDeQPjocHikLA7Gf6Z1JZG/IqWhalnh/U6rul196juqVK1z67VM09ivS1VmysM2AuuIBJZjiluPPa9hquIm0pcaP64ab66qb6roWHIfdV17dGURdUWYNUbWWDaDVq87UrizRa23qtbJCwqIINRu7AxQY3q5omD0tT6adyMTS0RsNj9r35u3PadFWc82fNn2tbSjXu5mGnttDLb7rTehCx58N/YD8GSdx5tkHmPwbqTbqqyfRNiQGjHvEy3j+1pnJZxFQ6k8FB9gLQVC86kNaazMPoNqiqMibV1//8L9QhV1Wv+m5Q2ZaqnPQv77jlcBkPw+JFz37/B/qq6Ybc0A//OhpGa0tAVfv16orw+o/t8IFxG7KVFCEg2RrmpFajxmRd9vKf6hWQBhzvfnkz21+G45gX9ecr8yn+NlySl2mdifbu4JS0euqteprSh8HsZgMcP/591oRj8KaNh4/5U7goLZBsDadoxL3Ww+HCmI27cLwaEDxacAyuKR7GmqU/93dtxm2kYQiH/3ZB8NgMx5uNcAxOWnB08JjDIChZIpA1TK9pfq2HQ3h/fdoLx+ATvKENx+CAdWdNss3rP7caJt/Uknr2cXBxei84LjfDcdWGYwkP1SD+LR02U2ty7AY4DgeXTAiW4Bi8GS3DMbjAhXhJ6ammqu6nq6bHFjS0jPthMLiECrYCx94SHIN2wlUwqX61i1aIeBMcr6CT+31wDLpwHGBAWFpXH7DAVVNWmvnS2OyjLXFHB442e2i1zgqn4go4zg4ZNdoIcLCqHgMHq7EFx+Coahju9mq86utgcDUbPwccoswDHrYVrILj9dcfKP1UdwDhGBypj4LD/czrq/BFOC7qubs1yUMvBgfbgMPdDIfos2QOFhrshaOKUH09a8FB6no4HIdVAuXnJhyDuk3tbRGf4bfzcZC8r6hqxln11eFHgCOr/nwtdIu8/rgZDrYE1fHceuEYvG/BQYKZj4Cjqu5DC45zPrFJ7VF+/XIwOIFKT355RWlwWFf1itOLweVo9ueqSPX0h5dVkZeb4aD71Nii/QPhGJw/jjtWwHHC7DV52J6EDn+C+Vsbq3IVXD3sVgV0ua/KR5zzajiaRTbDoZLlfK+tSFfBUfHgk+H4dHV1tfeX14w+/9CAIyjayXwg84MBNns8u1wHBy5SjU4P1sGxbHd04aAW4LKV3IHj4vT8/PznatieDMfRCCj492Zb2fosWOhLBhsqj1OUpPEI08lmP8etqi5PZ5Tw4X2ScTabtuG4pt/OtM1wYJKUuywrHTg+aaP9/dp2fjIcJ+Qto5MuHFUiRUXvcaqlzSa7w6btqi7P9+musbrEWGrDcfmWldgMhyh155U+OFSQq+1xB4UD8Kjz9JkqradZziSoWa4bbevA0emStgTHMc+r2gwH7ubrqI4OHH80AiOoA+9UaJ8iLKwZ45NqLe6ccWuVx/mx2aVGn3cKByqPohMgbcDx/ieg/1jki6S2jt5vDQ7x5OIToQsmr0H18OCsUfFJHUfaLRx+Kkw68bkGHO4ZktPc0Op+2BYc4ng80zSi6aisyFVK41llpuFUe/FccASJoHbit+tdODb3PgmOxk7iqS9zTQianXuzHwY/cfTRLHkuYTFyobtYvw4O993Xp8MRzLOa0po9gyq/8+vgFVem2Kc6ALdjOCyhu1VpNRzu6x/5bPAUOKSmrXX2F94sVeTPng0GL7nZ9xrwf1Nl3e4cDvEhcBxy5jjYHhwf/87iMPV7sbk/8t9Bebx4Ljjy9aq0S4c/EjiuHunR9sExeENSfchxNpRQX/wgNP6oWr5zVZqsm2h7CGMQAxou3RYcgAd5b6U6sLKv3Dv5/LIx1e58ol1rhh1+fkfpdRVnEA5/GLw4YQW3BAcxw+RqreQQABj8J19cOQP5vOB92rkZttZIfzd49ZLQq6/vKufq9eUpF/ZHwmG6disaRuAwquAt6cZltekEXN4XzyIs5MCqjS4co9q1/uFKe2TomMKx/+VLUKVV1HBU/QflOXjxV4vbfiidfKrdMXcI93DwGX2s3Kof6RLT480w8Ew7cKgq/wqlY3B8XpmoGBK7Gj0DHGQX1D3DP3W0FM10sjbySDhwpP0OHPKQl3qHquPan3LN6r7CjO1eOC66I/wEOEgQY2NwkO27qeHAmAyG0rcLxy3/5v1noP/yqiMAwEatNk7uEg4aHHTzpUX0TrxjNhqN9o1qCx2B4wAq2y4chbCKPuOm41EvHNsUFrawvmlh4ZNGjYwWHIPT7cLRDYTVdDYgC547hkOVaBBj3bIThUPtgeNku8KiflmzwReUyQFNUt8hHHzZac2i5Bo49rQtwjFrqI4e+ljlRuwOjmpRcs2SdQOOCjwGx9U2uWNWb1/uo/e43WXUA8enrcGhNU6sWZnQwODAL4P6eJM1cMj3g0OTqmIMDn9tig22oo87Pm1tZjEmlDlQZFemu7zD5/6Ih14NvQq8PjjQDR8MMLe7Dqr2wEH8vz9AsS9V0ygcqr8GDeLTUYtrV3DQdBfXEZLMXJ0MdYbrZH+K8CDhej2oDw7hEEtCucYCfA8cpMK/YXX1NwiHRg+CwMpff67pHTd1PuCG29EO4SDJUGGaPDhVjg3xMhw91AdHT20Ejmqp+j2LL1HiITGcaq92CEedKieqnUTKDXAcfmVwyNq6Yu6D4ODM97mJxuAD/5p3fTdwNBIpu2m2m+AgCgXhUKfrih3WcKw7tfQ9LlmLBvvL/bEFx0cuLR8HNCNtJ3DIWjPNViaBhjoJewMcZ684HKK/7jShjxUcQbHiiAwkwg5VmvzhTy04XvI0CpxqUXnsAo7lJOw7Onh8M8uG4CBr8JUmrrWdaKIPgWNd6uAhMseg6iU68/AUp2OuPFDy3uxGdzRS9DWxtYHD3wwH4w228Gys9LtYOQqHPF2V1s3AraSOqo4Z23+9X+VGuV+pzbV9OFSf9yGbgjLsbu9Zk5N++LHi41PyjuD8dV859wNbj6FwgHv0+7O+Yp9psUveIqo6XlSb4YxqpRwU1jXUNW3ndzwIjrzyit7XcLS290hS3+Yv7b9/edlHzYMCD1hD5J9BwpepLsYzcjV/XbGj4S/Nr97UnTP+h/2AzAZ2+v7/vGo+3QOHaPyZV/aiBYe6X/3wsoJjafMXB6O1NXAsN1NR+umIv33/9HpNMervYGPeXq4sdCHui6266z6qRp31MLiaieLbk+aO5D44xLdXzcoqOKAJrR8Qju7WQEJk4yhekEI3jo7HJ+uPjKTLThyPg5XFeNSGDM7FikLIaPuzBqitPo7q/l8gq7Xw6IVDHF01Wl/DIY5Hb1pwNDeO3jUUhJP7rW3F2nh8sm5b+PFVsxn7p6sG/sVV42ABVbzow/iYZnTvzypQl86qqPF4QRRRE49+OMbjq7pIAw6oq4HHm1l7W3HNH0ubzkVDJHi86KeDTyftbdD751eXx51ig+uLvdYGYVXrFoMys31WySV94eDNUux2xJsy2CN/v62atgIOcSzuVUVacCAevHl/P1+16XzpSALvNlABj70VdKSNlhqxL572lD6ZjdrL4eP98+ViJ+cVYuNz+tXV6XLvRvypIzoMb0/qV/TCIY61+kXt7fyjK/b1X/+XHUmQsVOA6BTec2CFqxSGMR6tov2eJuz3FeyW6xZrlOFv7B5HwB/jb66q6WtKq65ubfTbYL86C4qeOi+r9MAKcpxJsnycSTb8Le+3VoPJquNMvsVhN9+YAqN92M2CHXZTYtBj1VFI4e6OQvqmtPIopIxu8Fk6KCtgB2UJuhfs6KCsb0mbDsr6BseofTvqHKPG/Zj6GLW1h+wVvyVAeg7ZY95885A95Ir2EYxy6whG47cByL2PYBTWH9Bp/RY4JGgf0EmPcuYHdPbsiafHt87r41uVoSTRQMRujm99PtLIaaVkbPH4VjLWeHxrwI5v7V0BZIf7WjI93LcEw0PzDc482z/c97lo+XDfoDrcN6eH+64IXbaOfnbudnn087PRPY5+Xh3mz57pYPBnInIw+KJ7MHgVcnSdibcSDKHv2HiLPsaOjU+3cmz88xA9Nt4RmsfGs7tNGRxOuf7YeOF5LhXYOfFLBShj4KUC1Gdjlwok7KrfjZcKCPe5ciJMn3jlxK6pc+WE0XflhDe/132+nQtJ6HWWrQtJwrQYPv5Ckl2SCp7IpMi2diGJsPK6GjZZPf26mp1R73U1ytOuqyEPrbrMyN7GZUY7IZVcZpTVlxmlay4zeuiVxu2rrmR+1ZVbTP3gyVdd7QQKY/mqK3/1VVePuHRz+SI0ee1FaHmAtwR+i+kGL0ILCBQ7vAiN4BhH1LHDK5UzAu5k5TV5ceht65q8e5PKrskL62vydC8lWmHr1+SRXm68RLGhnp/1EkVys6RBL1Fs9G+Xlygi4RWbddLg93PFpoY88cArNounXrFJe2gWlcHSuICVbLFcfQGr/n1dwKonhbKFC1hp9+Ik/3Vfz2tt7Xpe1jXvJmt9QS9vVrX7Xd5s7+TyZoXtuFi+vHnYCvXZ6c12L2+mpFjNq72FxtXe1OknmSMxaFLJWmPkrL3aW72ZWHnxwKu98/pq7/i5rvamlHUufsdXNeB4vovfJ5iD4fde/M43Fbp2vMOL3wk587yMmYIG8458MOmlvZgfGDKDGFFKQSjY+eMwPz1Cq/MHbCdU6NPxrQRSRFbZWQ5GzDxMjYW77ShjtqMTe3n6QFv8MaTMYfpumYClAYoAWdQtmXtj8gaTw7jA6wGiAuyYMEHybnJOcx0OVmXhYEGTupApPBwg8jYxNdF5ciOWg4Hsd4tvF5u7pcAqjJL5+mzh7ZGrpGDqmtV4215uWSSuSDNFyAFtjTTE0pBhjphig80c+kaj2kpaMFtRL4uC3hCL9q9Hhjm2eMEUMSB5SyE1NXHXqcngwC47hWUtKjRcxwT3In0uLNhL4ywtw0rjOzFlSxBpVZOnCA01YFHDsQsI5QkuUUxxeAsAUvHxOmE08ZxcCgIJ4/j2HL0jvBvERt0g4s0H9rCyL0N6ZjMm0Tv5VAXniR2AEvN22KCnyzR7ou35OAJLq4zCsDmju0puTDU2qGQFCyxmnSm7W5fpFrK7m/qZN0rzHtCI+c48SIEHVOoEDi1Y2ExJUVMzXshTddGcNGAyD6Mye6jvvk2ylagso6gBiR6VNLLiGD7MeQZoDHdBVvEMi4u8BlqX3yFcCu4dC+jabn0vcsl1g+DW3OFmYOHKzNTUIy+qPARXD6EZZaQ83j/bFoF/Dy3xeNylorDAS4OwxSVwgib7kdDgDqWCw67gsOnVMagrGXf4Cq4bq6JGcx4dbxLcJEtqwTYjr8QtQ/cKfT4HgfoCRvWyrCU5uhJSIbZLUZJknFl0C80FaeGC90Os2gB6WVA4FnjLAfkkw89DojvQ1LQzsNLZ0pFths1eu3GYEYE1t+CcbZnA3CT2JnpYSz+5gBYx3V0FJwz0wFl8G5WuqYHT4WO0Sl9UMXuTFKS2BDzdUY4YnZpnoM0V/bvhig65jh7HSpTN5z2g0AIh42o3tIwJWRUS4kSWaWaakw1ltmwG3l8/+4PKzMCOL8M41r8/pugSmFK6DrptXhTzUuko+qoHTtUbW+dmHTzqdAoKvBTUuSgACFPXnW25689EGAmyHVBzySLP597jxRsVkzfPrTzJItNxOjGfXxW5LuCCPQJmyScTq0i9CL3VdV0Cmx3d3gyfGFqLOcxaOlTTE+r41RN18LM0TYoiB7Is8h+lCf5VFEmK04UCjtFz9///AE7QW7ftaw1uAAAAAElFTkSuQmCC" rel="icon">
+  <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAACUCAMAAABV5TcGAAABHVBMVEX////bHDAAAADXAADbFCvdNEDzyMvbGS7mHTOEER3bHTLeHDEHAQEdHR0nJyfiHTH43uDbDCb0zc+2trbgTFdoDRf88PHeQU4zBgvPz8+oFiX66On++vrYAAruHjSqqqromp/CwsKRkZEdBAaVEyHOGy2xFifZABTk5OTaAB7DGStkZGTyvcDvrbFXCxP21dfngIdMCRFGRkacnJzldHzoiY/qlJbhV2HjaHHspKZBCQ53DxomBQjiYWbkLT59fX3dRUTbLy9VVVU5OTnfVlXIiIy0AADDO0XDb3TGABOerq5qKCuVe3yuAA+WAABSAADNuroSJyYAFBN/LDKfYGSEAAB+XV06HR9/AAuwoKHbs7SoLzmVJi9kAACeS03I2PjGAAAcPklEQVR4nOVdi3ubSJIHgUBGSQyEINughMSWMQ4EecLTtjzOxDv32r3dud2729u7vf//z7iqfvAQSPJDcjJz9eXLJ0tN0/3rquqq6upuQXhmcp1YCaMyS5Mit4AmE4vThH7Oi2SeZmWoxLrtPnfzdk2u69quq5uRN19Yw6FVzDf31LUJZtm8yCdDazH3IlMn1fyK0XFt23F0JcqS3MrnXmg6j+yM65ihN4dKkiwyHcexf2U8A4Or63FYzosiLUPdXv6Zf3B0jpCt81LwqNMpKPBSUOcC6zR13fk1gOI6ehwDmyeJF8bLONACYaSQDruhZUw88jFORDmJ8ZOT3ci5Qko6Ciu4THYcQv1ZpMSx/liOewaydQUE3kvTqAOEbYahiS13FUuSpIUOH0vJkA0pgaKm6MuyL5oAQQFfBlIIP5ukYMyfjjusAqAQhat02O+bE4o3ThdZqDearSusF7anSpJcwmfd8jVRkxauYEuqKIpqAF1fGPBJNBaCEE3JJxkeGUJBUSqAP+zMl6RhRGuKwybLuIBJVkbh4xXT9gm4OopK0P5LoxQWcmCV2PjSkEVN9iP4ToJOAh66oJBPolQK9h2F4862U18kP9vsZ9UHwcmmqqgZX5BlnGwS3CRm+z02zFolNKFftJ6VbCXCljSYQo+8iLRLN3xVDQzgCXcRkP5aghtJtL+KEFdwuBUcbjblcJSsYCi4Qxk/BgkwQxYYqjwdEtwd/iIkYBMck0j5hoKjR4RRm/LhKgtjKhaoG+ZT7G8AekLPSX/lW7fBHa6BXxoaDP88UFFs5iAswEaiFkxAdVDuCBRBJ3BoAQiYaRnkaWAzIV6oU5XqFkYgSCiwkf7MMJB+x14WgTnFRsOJaSOcia9q8hQV5IRiMFEEm3KHDL3U8ynqjgIQVAIp8H0PSjq5FARSjmoinfqBdAOdtCdEdySO4N5S7ihA1G4qRnFyECF1uqD8EfN2ICRlmnUU726xUGD6MONKfdke2NsIAYw+tleF0Re4hEDfPBx0dYqDauYwYRDuEcy0mIekG3pZFCX5zo6SwiNDHlu8IFEoRHeEVG6mKYBJXiRKWNYpLGtR8saAWjejeao8FyJmmoDR3BTS0ggMI7CgKVzkTc7u07mLcEHXJM+ljQ1jJvJ2ZUq5DocWTDjOcCbMF6RYCg/7OLPYyZTU7nAlJEohfH2Lb1ejRoNs3SyT+ZLK3QXpaV5ytogyOvsRkdZE0I+VbsBBy6SpL+Vk0F09DB8+FVbMVz0d30r+lJol9YvIEGjBgrFXFtKHnNjL093qkXKSxnxE9VvQ8rc4ApGsch7WbwKiG3CEXT2dh1tmWTuaZ6SLDjFgpqhwmKIeIgzhrQyNYvzl2sr8ptxuA2qKc0up/Qj3NlBhIr2DV0daBYcQy8DZd2sGhTr4XjpHB38y1GTQp5wMcTix8kWSpJ4HatpZN2vGN/CiIXJhEXCdDUNEGmXVbwN9k8era3ksueUwbbWOYiAj+nEesNkTC4al2WUJBzy6tLBUidDU94MABN4wZFltkizjl/CbDzJBi2pWkpVKj//jKiVVDlRAfTRgU5k2qqU17EQut8qkrp5YIesXKPwh+liZSoxsGVkiktH9mHcec12wWNNiQnvmB4asakDiPQnLqrIR+PT5SZGBN9QT9LDA5QmIrCSEUVQN1WqoSVRo8fMk0beECEhgkXDzz5ZAZAM5RO7ASU/WiGyai+Ekaj5i23GULTQyvmBJ3h+C1dCoRkA4Zlhk4CzbTVS84bAgEtHgjkgyNI0ZsEBxsYi3EBIAhzzJak4lpqY2BXjsuwC0VnDXdhQw5hOHKQFiGoCn8lQYOrCIMkHlpvBCvRMJiiegO+QAnEF9QQW4HiQ7TR4xu7UIjLwEJ9PKGqCmJrGtlDtN1u6URmFHj6N5HqBYyFvHYQkVwipynobtmEdkafINTrmmVtmyArdwbC+JnmCvutA7ojLsMFmkRD1ZFA6irO0yLSsh0s0wW6iIhPrkvo7H98RERrUCfIKhV9aQ2EuJMWRSA9ZP8EslXTD7tyy6wZj7EfjNKbNoUuilpCIjEJNHnbYmGVsHfWn5yBP37e/sZB0dnYr3BAQJhUdepGE7DOQQA1YlJlvoT4Mp8Y6AonnUM/NtIteMPDaZCCGOOPiZyG8LmCT9eiZ3EYrckHzjIUyxf/5isI4O9rQH4IHdNnyUnEip5w9zMoXpOsE2M9+Zzb4uGNMPBUSPysqgdD3miKBkON48yRgaDvDP4uaBUFA4jtfCMRhc7T+wSpAcgORmkfIolGtmybzEzzyywkcXTFuvfIj1bgMYNnGsyF91UIb8SVWXE3qJFUzvLSAPg2NwNHpEvSg4gTX3QhqbZurfZHDQSYYE6jF0dF8V4oYZqS/EhQHyYYrDb2g1hzloXIFZ9ZgmczheXDD6dICi8+KA/sWAunwUHEhg1E6KNKwNAIdEZWUDdZ+eLgoyKehcMW4iZx4RCQyhv4GPdl0jvk15Z74YBo9iiyYc17NzSrMrhOP4hP19QeC4fspMLQfBEJQrH75SCsBoRvXvLLBPOeLhxuX8HhLjpXQmoiEsNfAEErEVc1Z7OL8bGk80sCgcb8c4pY7Hoz3kiOOj0RhpdEL44/j8Ycq0TWisyUNmHOCKjmoR4ajDkNhDM/E2sYbF49EKs7hyUqFD1Yie3Q1l4wl8weFA6RjN3lxefjofvWVwvN1HertHZp3r2VPgIAQNHVpkesXmk8GkcUYjZ310osna6HuaVApGmdBHa2dZCPMvqiE/3cyC0ZsBjWcgF9cnp+dEWF7snZ8i7V0/UXc0CPw/9UvRMJxvmVHNpcS1rdUMYluNaA2L9xop/9v7gu74FhqJNEYxmX0CFF4cH1MjBD4gMYvk9MEzbT8BIgZbsgIqqOW+qPvsepMVU0xokWlkYlDvMAoCcNZU+pue+P7WsGBE4FhBJ2+39x5VngYpFQp7Gmii/4Xwi5IT10vQh71TzDxDDDOYRPwp9dqHkpRQMHLJ3zIW4lo4Pm0RDSBN9SUao3BzSaKikpHpBpGwi06kBmx8gpFDTJagGU9zzVwKtto6RlRYjpeEheJxsQ3V0SQApGhGgMIhXcEiX5XFUpjCZFF4aoCqYhUmsGMAYzfeOlelp2+IKr0imvTkgoKzt208YJClRe3llaSj3HJXimY40Q2ZbHE4ZAaHrS92BQbC8QZM0qWJdsQk6Hj7cCAgc84hHA7W0TipZxE3qhx2k3hrhmVSMNLdgDHWjo6OTsdoysE/bobRuYSZYdez7SsrIF/yKCDhDQqLKvEpF2xxnolUejWj5FPDCAxcMHN1z/B30STm4OP4k/BzLxzH51uaaZdJ0og3a6dBYAQ0OkR5IqUBEceL0D8NqdNjz3NrgUEusNimTzY/VxAz0vf3mR3KjHTy1+wNFZanW6UryJjm6K7r2cJapIQj9DDERAgPY8J2GqFZIUsGzc4SYlPHRYzk0f7qZqJwUCv0lKvSPfL56IrOLQc7Yg6kQJ5j/Ec36cKQUgSSNncwUGYL6OeCyyqDHOWV3nW8oa/uLvpLHfzLA0qX19TBJ595IGQHM0tNmJVU9/UWbCqZOLxRIpD1XxLQIOvubN6Rd8ca4n3CP5cPiZY+ggI14aZVREwtWcS/6bQbsuwAOuu42e0WwuHraCMcB7tSpBUBg9CpxKX5aKJUWx4Kyw4g3ziFulPWEJmDv5qu93aOBlCgUfc9YmlXtSHuLDBFKRji3GLePiXOdU/STtfQ+eyBcfRHkkwdfT0wMAcjadjp5q00JSlZQvll16yxkcb3XXZ6Kqk0OzPEJfG8FSh0Qhp+nvu7Xk78rkieogXqRF6VgNlagCl24Md/16T6abP/tiAZdfAs34kj/12TOq3t9GgqCZrhs2iQ+/8QDeQPjocHikLA7Gf6Z1JZG/IqWhalnh/U6rul196juqVK1z67VM09ivS1VmysM2AuuIBJZjiluPPa9hquIm0pcaP64ab66qb6roWHIfdV17dGURdUWYNUbWWDaDVq87UrizRa23qtbJCwqIINRu7AxQY3q5omD0tT6adyMTS0RsNj9r35u3PadFWc82fNn2tbSjXu5mGnttDLb7rTehCx58N/YD8GSdx5tkHmPwbqTbqqyfRNiQGjHvEy3j+1pnJZxFQ6k8FB9gLQVC86kNaazMPoNqiqMibV1//8L9QhV1Wv+m5Q2ZaqnPQv77jlcBkPw+JFz37/B/qq6Ybc0A//OhpGa0tAVfv16orw+o/t8IFxG7KVFCEg2RrmpFajxmRd9vKf6hWQBhzvfnkz21+G45gX9ecr8yn+NlySl2mdifbu4JS0euqteprSh8HsZgMcP/591oRj8KaNh4/5U7goLZBsDadoxL3Ww+HCmI27cLwaEDxacAyuKR7GmqU/93dtxm2kYQiH/3ZB8NgMx5uNcAxOWnB08JjDIChZIpA1TK9pfq2HQ3h/fdoLx+ATvKENx+CAdWdNss3rP7caJt/Uknr2cXBxei84LjfDcdWGYwkP1SD+LR02U2ty7AY4DgeXTAiW4Bi8GS3DMbjAhXhJ6ammqu6nq6bHFjS0jPthMLiECrYCx94SHIN2wlUwqX61i1aIeBMcr6CT+31wDLpwHGBAWFpXH7DAVVNWmvnS2OyjLXFHB442e2i1zgqn4go4zg4ZNdoIcLCqHgMHq7EFx+Coahju9mq86utgcDUbPwccoswDHrYVrILj9dcfKP1UdwDhGBypj4LD/czrq/BFOC7qubs1yUMvBgfbgMPdDIfos2QOFhrshaOKUH09a8FB6no4HIdVAuXnJhyDuk3tbRGf4bfzcZC8r6hqxln11eFHgCOr/nwtdIu8/rgZDrYE1fHceuEYvG/BQYKZj4Cjqu5DC45zPrFJ7VF+/XIwOIFKT355RWlwWFf1itOLweVo9ueqSPX0h5dVkZeb4aD71Nii/QPhGJw/jjtWwHHC7DV52J6EDn+C+Vsbq3IVXD3sVgV0ua/KR5zzajiaRTbDoZLlfK+tSFfBUfHgk+H4dHV1tfeX14w+/9CAIyjayXwg84MBNns8u1wHBy5SjU4P1sGxbHd04aAW4LKV3IHj4vT8/PznatieDMfRCCj492Zb2fosWOhLBhsqj1OUpPEI08lmP8etqi5PZ5Tw4X2ScTabtuG4pt/OtM1wYJKUuywrHTg+aaP9/dp2fjIcJ+Qto5MuHFUiRUXvcaqlzSa7w6btqi7P9+musbrEWGrDcfmWldgMhyh155U+OFSQq+1xB4UD8Kjz9JkqradZziSoWa4bbevA0emStgTHMc+r2gwH7ubrqI4OHH80AiOoA+9UaJ8iLKwZ45NqLe6ccWuVx/mx2aVGn3cKByqPohMgbcDx/ieg/1jki6S2jt5vDQ7x5OIToQsmr0H18OCsUfFJHUfaLRx+Kkw68bkGHO4ZktPc0Op+2BYc4ng80zSi6aisyFVK41llpuFUe/FccASJoHbit+tdODb3PgmOxk7iqS9zTQianXuzHwY/cfTRLHkuYTFyobtYvw4O993Xp8MRzLOa0po9gyq/8+vgFVem2Kc6ALdjOCyhu1VpNRzu6x/5bPAUOKSmrXX2F94sVeTPng0GL7nZ9xrwf1Nl3e4cDvEhcBxy5jjYHhwf/87iMPV7sbk/8t9Bebx4Ljjy9aq0S4c/EjiuHunR9sExeENSfchxNpRQX/wgNP6oWr5zVZqsm2h7CGMQAxou3RYcgAd5b6U6sLKv3Dv5/LIx1e58ol1rhh1+fkfpdRVnEA5/GLw4YQW3BAcxw+RqreQQABj8J19cOQP5vOB92rkZttZIfzd49ZLQq6/vKufq9eUpF/ZHwmG6disaRuAwquAt6cZltekEXN4XzyIs5MCqjS4co9q1/uFKe2TomMKx/+VLUKVV1HBU/QflOXjxV4vbfiidfKrdMXcI93DwGX2s3Kof6RLT480w8Ew7cKgq/wqlY3B8XpmoGBK7Gj0DHGQX1D3DP3W0FM10sjbySDhwpP0OHPKQl3qHquPan3LN6r7CjO1eOC66I/wEOEgQY2NwkO27qeHAmAyG0rcLxy3/5v1noP/yqiMAwEatNk7uEg4aHHTzpUX0TrxjNhqN9o1qCx2B4wAq2y4chbCKPuOm41EvHNsUFrawvmlh4ZNGjYwWHIPT7cLRDYTVdDYgC547hkOVaBBj3bIThUPtgeNku8KiflmzwReUyQFNUt8hHHzZac2i5Bo49rQtwjFrqI4e+ljlRuwOjmpRcs2SdQOOCjwGx9U2uWNWb1/uo/e43WXUA8enrcGhNU6sWZnQwODAL4P6eJM1cMj3g0OTqmIMDn9tig22oo87Pm1tZjEmlDlQZFemu7zD5/6Ih14NvQq8PjjQDR8MMLe7Dqr2wEH8vz9AsS9V0ygcqr8GDeLTUYtrV3DQdBfXEZLMXJ0MdYbrZH+K8CDhej2oDw7hEEtCucYCfA8cpMK/YXX1NwiHRg+CwMpff67pHTd1PuCG29EO4SDJUGGaPDhVjg3xMhw91AdHT20Ejmqp+j2LL1HiITGcaq92CEedKieqnUTKDXAcfmVwyNq6Yu6D4ODM97mJxuAD/5p3fTdwNBIpu2m2m+AgCgXhUKfrih3WcKw7tfQ9LlmLBvvL/bEFx0cuLR8HNCNtJ3DIWjPNViaBhjoJewMcZ684HKK/7jShjxUcQbHiiAwkwg5VmvzhTy04XvI0CpxqUXnsAo7lJOw7Onh8M8uG4CBr8JUmrrWdaKIPgWNd6uAhMseg6iU68/AUp2OuPFDy3uxGdzRS9DWxtYHD3wwH4w228Gys9LtYOQqHPF2V1s3AraSOqo4Z23+9X+VGuV+pzbV9OFSf9yGbgjLsbu9Zk5N++LHi41PyjuD8dV859wNbj6FwgHv0+7O+Yp9psUveIqo6XlSb4YxqpRwU1jXUNW3ndzwIjrzyit7XcLS290hS3+Yv7b9/edlHzYMCD1hD5J9BwpepLsYzcjV/XbGj4S/Nr97UnTP+h/2AzAZ2+v7/vGo+3QOHaPyZV/aiBYe6X/3wsoJjafMXB6O1NXAsN1NR+umIv33/9HpNMervYGPeXq4sdCHui6266z6qRp31MLiaieLbk+aO5D44xLdXzcoqOKAJrR8Qju7WQEJk4yhekEI3jo7HJ+uPjKTLThyPg5XFeNSGDM7FikLIaPuzBqitPo7q/l8gq7Xw6IVDHF01Wl/DIY5Hb1pwNDeO3jUUhJP7rW3F2nh8sm5b+PFVsxn7p6sG/sVV42ABVbzow/iYZnTvzypQl86qqPF4QRRRE49+OMbjq7pIAw6oq4HHm1l7W3HNH0ubzkVDJHi86KeDTyftbdD751eXx51ig+uLvdYGYVXrFoMys31WySV94eDNUux2xJsy2CN/v62atgIOcSzuVUVacCAevHl/P1+16XzpSALvNlABj70VdKSNlhqxL572lD6ZjdrL4eP98+ViJ+cVYuNz+tXV6XLvRvypIzoMb0/qV/TCIY61+kXt7fyjK/b1X/+XHUmQsVOA6BTec2CFqxSGMR6tov2eJuz3FeyW6xZrlOFv7B5HwB/jb66q6WtKq65ubfTbYL86C4qeOi+r9MAKcpxJsnycSTb8Le+3VoPJquNMvsVhN9+YAqN92M2CHXZTYtBj1VFI4e6OQvqmtPIopIxu8Fk6KCtgB2UJuhfs6KCsb0mbDsr6BseofTvqHKPG/Zj6GLW1h+wVvyVAeg7ZY95885A95Ir2EYxy6whG47cByL2PYBTWH9Bp/RY4JGgf0EmPcuYHdPbsiafHt87r41uVoSTRQMRujm99PtLIaaVkbPH4VjLWeHxrwI5v7V0BZIf7WjI93LcEw0PzDc482z/c97lo+XDfoDrcN6eH+64IXbaOfnbudnn087PRPY5+Xh3mz57pYPBnInIw+KJ7MHgVcnSdibcSDKHv2HiLPsaOjU+3cmz88xA9Nt4RmsfGs7tNGRxOuf7YeOF5LhXYOfFLBShj4KUC1Gdjlwok7KrfjZcKCPe5ciJMn3jlxK6pc+WE0XflhDe/132+nQtJ6HWWrQtJwrQYPv5Ckl2SCp7IpMi2diGJsPK6GjZZPf26mp1R73U1ytOuqyEPrbrMyN7GZUY7IZVcZpTVlxmlay4zeuiVxu2rrmR+1ZVbTP3gyVdd7QQKY/mqK3/1VVePuHRz+SI0ee1FaHmAtwR+i+kGL0ILCBQ7vAiN4BhH1LHDK5UzAu5k5TV5ceht65q8e5PKrskL62vydC8lWmHr1+SRXm68RLGhnp/1EkVys6RBL1Fs9G+Xlygi4RWbddLg93PFpoY88cArNounXrFJe2gWlcHSuICVbLFcfQGr/n1dwKonhbKFC1hp9+Ik/3Vfz2tt7Xpe1jXvJmt9QS9vVrX7Xd5s7+TyZoXtuFi+vHnYCvXZ6c12L2+mpFjNq72FxtXe1OknmSMxaFLJWmPkrL3aW72ZWHnxwKu98/pq7/i5rvamlHUufsdXNeB4vovfJ5iD4fde/M43Fbp2vMOL3wk587yMmYIG8458MOmlvZgfGDKDGFFKQSjY+eMwPz1Cq/MHbCdU6NPxrQRSRFbZWQ5GzDxMjYW77ShjtqMTe3n6QFv8MaTMYfpumYClAYoAWdQtmXtj8gaTw7jA6wGiAuyYMEHybnJOcx0OVmXhYEGTupApPBwg8jYxNdF5ciOWg4Hsd4tvF5u7pcAqjJL5+mzh7ZGrpGDqmtV4215uWSSuSDNFyAFtjTTE0pBhjphig80c+kaj2kpaMFtRL4uC3hCL9q9Hhjm2eMEUMSB5SyE1NXHXqcngwC47hWUtKjRcxwT3In0uLNhL4ywtw0rjOzFlSxBpVZOnCA01YFHDsQsI5QkuUUxxeAsAUvHxOmE08ZxcCgIJ4/j2HL0jvBvERt0g4s0H9rCyL0N6ZjMm0Tv5VAXniR2AEvN22KCnyzR7ou35OAJLq4zCsDmju0puTDU2qGQFCyxmnSm7W5fpFrK7m/qZN0rzHtCI+c48SIEHVOoEDi1Y2ExJUVMzXshTddGcNGAyD6Mye6jvvk2ylagso6gBiR6VNLLiGD7MeQZoDHdBVvEMi4u8BlqX3yFcCu4dC+jabn0vcsl1g+DW3OFmYOHKzNTUIy+qPARXD6EZZaQ83j/bFoF/Dy3xeNylorDAS4OwxSVwgib7kdDgDqWCw67gsOnVMagrGXf4Cq4bq6JGcx4dbxLcJEtqwTYjr8QtQ/cKfT4HgfoCRvWyrCU5uhJSIbZLUZJknFl0C80FaeGC90Os2gB6WVA4FnjLAfkkw89DojvQ1LQzsNLZ0pFths1eu3GYEYE1t+CcbZnA3CT2JnpYSz+5gBYx3V0FJwz0wFl8G5WuqYHT4WO0Sl9UMXuTFKS2BDzdUY4YnZpnoM0V/bvhig65jh7HSpTN5z2g0AIh42o3tIwJWRUS4kSWaWaakw1ltmwG3l8/+4PKzMCOL8M41r8/pugSmFK6DrptXhTzUuko+qoHTtUbW+dmHTzqdAoKvBTUuSgACFPXnW25689EGAmyHVBzySLP597jxRsVkzfPrTzJItNxOjGfXxW5LuCCPQJmyScTq0i9CL3VdV0Cmx3d3gyfGFqLOcxaOlTTE+r41RN18LM0TYoiB7Is8h+lCf5VFEmK04UCjtFz9///AE7QW7ftaw1uAAAAAElFTkSuQmCC" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Valera
+  * Template URL: https://bootstrapmade.com/valera-free-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="c:\Users\javed\Pictures\Screenshots\Screenshot 2025-05-24 200723.png" alt=""> 
+        <h1 class="sitename">BUGATTI</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#illusso" class="active">IL LUSSO</a></li>
+          <li><a href="#about">I NOSTRI RECORD</a></li>
+          <li><a href="#services">CONCESSIONARI</a></li>
+          <li><a href="#portfolio">PRODOTTI</a></li>
+          <li><a href="#team">MACCHINE</a></li>
+          <li><a href="#contact">CONTATTI</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-emoji"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+<!-- Hero Section -->
+<section id="illusso" class="hero section dark-background position-relative">
+
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="assets/img/bugatti-tourbillon.mp4" type="video/mp4">
+    Il tuo browser non supporta il video.
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Text Content -->
+  <div class="container text-center position-relative z-2" data-aos="zoom-in" data-aos-delay="200">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="hero-title">Bugatti</h2>
+        <p class="hero-subtitle">IL LUSSO NEL MARCHIO</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Scroll Button -->
+  <div class="scroll-down-icon position-absolute bottom-0 start-50 translate-middle-x mb-4">
+    <a href="#about"><i class="bi bi-chevron-double-down fs-1 text-white"></i></a>
+  </div>
+
+</section><!-- /Hero Section -->
+
+<!-- Custom CSS (place in your style.css or in a <style> tag) -->
+<style>
+  .hero {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Darken for text visibility */
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-subtitle {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+    margin-top: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .scroll-down-icon a {
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .scroll-down-icon a:hover {
+    color: #007bff;
+  }
+</style>
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>I NOSTRI RECORD:</h2>
+        <p>La Bugatti non è solo olio e fumo,ma anche un gran pezzo della storia automobilistica</p>
+      </div><!-- End Section Title -->
+<div class="container">
+
+  <div class="row gy-5">
+
+    <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+      <h3>Bugatti Veyron</h3>
+      <p>
+        Auto di produzione più veloce al mondo (2005-2010).<br>
+        <strong>Velocità massima certificata:</strong> 407,1 km/h (253,81 mph).<br>
+        Raggiunta da una versione speciale, la Veyron 16.4 Super Sport.<br>
+        <strong>Accelerazione:</strong> 0-100 km/h in circa 2,5 secondi – impressionante per un’auto così pesante.
+      </p>
+    </div>
+
+    <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+      <div class="row gy-4">
+
+        <div class="col-md-6 icon-box position-relative">
+          <i class="bi bi-speedometer2"></i>
+          <h4><a href="" class="stretched-link">Bugatti Chiron Super Sport 300+ (2019)</a></h4>
+          <p>
+            Prima auto di serie a superare i 300 mph.<br>
+            <strong>Velocità massima:</strong> 490,48 km/h (304,77 mph).<br>
+            Test effettuato da Bugatti nel circuito Ehra-Lessien.
+          </p>
+        </div>
+
+        <div class="col-md-6 icon-box position-relative">
+          <i class="bi bi-lightning-charge"></i>
+          <h4><a href="" class="stretched-link">Bugatti Bolide (2020)</a></h4>
+          <p>
+            Hypercar estrema da pista.<br>
+            <strong>Accelerazione 0–100 km/h:</strong> 2,17 secondi.<br>
+            <strong>Potenza:</strong> fino a 1.850 CV con carburante racing.
+          </p>
+        </div>
+
+        <div class="col-md-6 icon-box position-relative">
+          <i class="bi bi-award"></i>
+          <h4><a href="" class="stretched-link">Bugatti La Voiture Noire (2019)</a></h4>
+          <p>
+            L’auto nuova più costosa mai venduta al momento del lancio.<br>
+            <strong>Prezzo:</strong> circa 11 milioni di euro.<br>
+            Prodotta in un solo esemplare, ispirata alla Type 57 SC Atlantic.
+          </p>
+        </div>
+
+        <div class="col-md-6 icon-box position-relative">
+          <i class="bi bi-rocket-takeoff"></i>
+          <h4><a href="" class="stretched-link">Bugatti Divo (2018)</a></h4>
+          <p>
+            Ottimizzata per la maneggevolezza rispetto alla Chiron.<br>
+            <strong>Velocità massima:</strong> limitata a 380 km/h.<br>
+            <strong>Accelerazione 0–100 km/h:</strong> circa 2,4 secondi.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+   <!-- Stats Section -->
+<section id="stats" class="stats section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Veyron prodotti</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Chiron prodotti</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Divo prodotti</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+          <p>La Voiture Noire prodotte</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Stats Section -->
+
+
+    
+   <!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Concessionari Bugatti</h2>
+    <p>I showroom Bugatti più iconici e prestigiosi al mondo, dove l'eccellenza incontra il design esclusivo.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row g-5">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item item-cyan position-relative">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h3>Bugatti Greenwich (USA)</h3>
+            <p>Situato in Connecticut, è uno dei concessionari Bugatti più esclusivi negli Stati Uniti, gestito da Miller Motorcars.</p>
+            <a href="bugatti-greenwich.html" class="read-more stretched-link" target="_blank">scopri di più <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Dealer Item -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item item-orange position-relative">
+          <i class="bi bi-building icon"></i>
+          <div>
+            <h3>Bugatti Tokyo (Giappone)</h3>
+            <p>Uno showroom ultramoderno nel cuore di Tokyo, riflette la precisione e l’eleganza tipica giapponese.</p>
+            <a href="tokyo.html" class="read-more stretched-link" target="_blank">scopri di più <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Dealer Item -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item item-teal position-relative">
+          <i class="bi bi-globe-europe-africa icon"></i>
+          <div>
+            <h3>Bugatti Paris (Francia)</h3>
+            <p>Il concessionario nella patria natale del marchio, punto di riferimento per appassionati ed élite europea.</p>
+            <a href="paris.html" class="read-more stretched-link" target="_blank">scopri di più <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Dealer Item -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item item-red position-relative">
+          <i class="bi bi-star icon"></i>
+          <div>
+            <h3>Bugatti Dubai (EAU)</h3>
+            <p>Uno dei più lussuosi al mondo, con una clientela esclusiva e personalizzazioni su misura per l’élite araba.</p>
+            <a href="dubai.html" class="read-more stretched-link" target="_blank">scopri di più<i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Dealer Item -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item item-indigo position-relative">
+          <i class="bi bi-car-front icon"></i>
+          <div>
+            <h3>Bugatti London (Regno Unito)</h3>
+            <p>Gestito da H.R. Owen, è simbolo di eleganza britannica e punto di incontro per collezionisti e celebrità.</p>
+            <a href="londra.html" class="read-more stretched-link" target="_blank">scopri di più <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Dealer Item -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item item-pink position-relative">
+          <i class="bi bi-building-check icon"></i>
+          <div>
+            <h3>Bugatti Munich (Germania)</h3>
+            <p>Con sede a Monaco di Baviera, offre esperienze di consegna personalizzate e un centro tecnico all’avanguardia.</p>
+            <a href="munich.html" class="read-more stretched-link" target="_blank">scopri di più <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Dealer Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonianze</h2>
+    <p>Cosa dicono i nostri clienti sull’esperienza unica Bugatti</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 1,
+              "spaceBetween": 40
+            },
+            "1200": {
+              "slidesPerView": 3,
+              "spaceBetween": 1
+            }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+
+        <!-- Testimonial 1 -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              Guidare una Bugatti non è semplicemente un'esperienza: è un'emozione che ti resta dentro per sempre. Cura maniacale dei dettagli e prestazioni senza paragoni.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/ray.jpeg" class="testimonial-img" alt="Cliente Bugatti">
+              <h3>gay uruci</h3>
+              <h4>Collezionista</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              Ho acquistato il merchandising ufficiale per mio marito de poi e sono rimasto colpito dalla qualità: elegante, curato e perfettamente in linea con il marchio.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/prof.giseppe.jpg" class="testimonial-img" alt="Cliente Bugatti">
+              <h3>prof.Giseppe</h3>
+              <h4>Cliente</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+             mi sono giocato i capelli per prendere una bugatti,ma ho solo preso un panino alla cotoletta.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/stempia.jpeg" class="testimonial-img" alt="Cliente Bugatti">
+              <h3>balza.bklf</h3>
+              <h4>Appassionato di bklf</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              I prodotti Bugatti uniscono eleganza e performance. Ho acquistato una borsa da viaggio ed è diventata il mio accessorio preferito per ogni spostamento.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/fiorito.jpg" class="testimonial-img" alt="Cliente Bugatti">
+              <h3>Davide F.</h3>
+              <h4>Imprenditrice</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              La Bugatti Bolide è un capolavoro ingegneristico. Averla anche in versione modellino in scala è un sogno da collezionista diventato realtà!
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/cisla.jpg" class="testimonial-img" alt="Cliente Bugatti">
+              <h3>Cristian Cislagay</h3>
+              <h4>Collezionista di modellini</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- /Testimonials Section -->
+
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
+
+  <!-- Titolo Sezione -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Prodotti Bugatti</h2>
+    <p>Scopri l’esclusiva collezione di merchandising Bugatti: stile, eleganza e performance.</p>
+  </div><!-- Fine Titolo -->
+
+  <style>
+    .portfolio-content {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      background: #fff;
+    }
+
+    .portfolio-content:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio-content img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+      border-bottom: 1px solid #eee;
+      display: block;
+    }
+
+    .portfolio-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .portfolio-info h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-info p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .details-link i {
+      font-size: 20px;
+      color: #0d6efd;
+      transition: color 0.3s;
+    }
+
+    .details-link:hover i {
+      color: #084298;
+    }
+  </style>
+
+  <div class="container">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">Tutti</li>
+        <li data-filter=".filter-abbigliamento">Abbigliamento</li>
+        <li data-filter=".filter-accessori">Accessori</li>
+        <li data-filter=".filter-modelli">Modelli in scala</li>
+        <li data-filter=".filter-bevande">Bevande</li>
+      </ul><!-- Fine Filtri -->
+
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Cappello Bugatti -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-abbigliamento">
+          <div class="portfolio-content">
+            <img src="assets/img/cappello.jpg" alt="Cappello Bugatti">
+            <div class="portfolio-info">
+              <h4>Cappello Bugatti</h4>
+              <p>Elegante cappellino sportivo con logo Bugatti ricamato.</p>
+              <a href="https://store.millermotorcars.com/products/bugatti-bolide-cap" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polo Bugatti -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-abbigliamento">
+          <div class="portfolio-content">
+            <img src="assets/img/polo.jpg" alt="Polo Bugatti">
+            <div class="portfolio-info">
+              <h4>Polo Bugatti</h4>
+              <p>Polo nera con dettagli premium ispirati alla Bugatti Bolide.</p>
+              <a href="https://store.millermotorcars.com/products/bugatti-bolide-black-polo" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tazza Bugatti -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-accessori">
+          <div class="portfolio-content">
+            <img src="assets/img/tazza.jpg" alt="Tazza Bugatti">
+            <div class="portfolio-info">
+              <h4>Tazza Bugatti</h4>
+              <p>Tazza in ceramica con logo Bugatti, per veri appassionati.</p>
+              <a href="#" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modello Bugatti Bolide 1:18 -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-modelli">
+          <div class="portfolio-content">
+            <img src="assets/img/modello.jpg" alt="Modello Bolide 1:18">
+            <div class="portfolio-info">
+              <h4>Bugatti Bolide 1:18</h4>
+              <p>Modello in scala 1:18 dettagliato della Bugatti Bolide, da collezione.</p>
+              <a href="https://store.millermotorcars.com/products/bugatti-bolide-1-18-model" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maglietta Bugatti What If -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-abbigliamento">
+          <div class="portfolio-content">
+            <img src="assets/img/maglietta.jpg" alt="Maglietta What If">
+            <div class="portfolio-info">
+              <h4>Maglietta "What If?"</h4>
+              <p>T-shirt Bugatti con grafica “What if?”, per chi osa immaginare.</p>
+              <a href="#" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- T-shirt Bugatti Bolide -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-abbigliamento">
+          <div class="portfolio-content">
+            <img src="assets/img/bolide.jpg" alt="T-shirt Bugatti Bolide">
+            <div class="portfolio-info">
+              <h4>Bugatti Bolide T-Shirt</h4>
+              <p>Maglietta ufficiale con stampa della Bolide, moderna e sportiva.</p>
+              <a href="https://store.millermotorcars.com/products/bugatti-bolide-black-t-shirt" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Occhiali Bugatti -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-accessori">
+          <div class="portfolio-content">
+            <img src="assets/img/occhiali.jpg" alt="Occhiali Bugatti">
+            <div class="portfolio-info">
+              <h4>Occhiali Bugatti</h4>
+              <p>Collezione di occhiali da sole Bugatti: design esclusivo e materiali di lusso.</p>
+              <a href="https://nbagboutique.com/collections/bugatti" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Champagne Bugatti -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bevande">
+          <div class="portfolio-content">
+            <img src="assets/img/beve.jpg" alt="Champagne Bugatti">
+            <div class="portfolio-info">
+              <h4>Champagne Bugatti</h4>
+              <p>Champagne di lusso in collaborazione con Carbon, per brindare con stile.</p>
+              <a href="https://hypebeast.com/2022/7/bugatti-bolide-eb-03-champagne-carbon-release" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Borsa da Viaggio Bugatti -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-accessori">
+          <div class="portfolio-content">
+            <img src="assets/img/borsa.jpg" alt="Borsa Bugatti">
+            <div class="portfolio-info">
+              <h4>Borsa da Viaggio Bugatti</h4>
+              <p>Borsa elegante in pelle con dettagli Bugatti, perfetta per viaggi brevi.</p>
+              <a href="https://store.bugatti.com/products/travel-bag" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- Fine contenitore -->
+
+    </div>
+  </div>
+</section><!-- /Sezione Portfolio -->
+
+
+
+
+   <!-- Bugatti Cars Section -->
+<section id="team" class="team section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Le Auto Più Iconiche</h2>
+    <p>Scopri i modelli leggendari che hanno fatto la storia del marchio Bugatti.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <!-- Chiron -->
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="assets/img/chiron.jpg" class="img-fluid" alt="Bugatti Chiron">
+          </div>
+          <div class="member-info">
+            <h4>Bugatti Chiron</h4>
+            <span>Un concentrato di potenza e lusso: 1500 CV e design mozzafiato.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divo -->
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="assets/img/divo.jpg" class="img-fluid" alt="Bugatti Divo">
+          </div>
+          <div class="member-info">
+            <h4>Bugatti Divo</h4>
+            <span>Agilità in pista e stile unico, prodotta in soli 40 esemplari.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- La Voiture Noire -->
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="assets/img/voiture-noire.jpg" class="img-fluid" alt="La Voiture Noire">
+          </div>
+          <div class="member-info">
+            <h4>La Voiture Noire</h4>
+            <span>Una sola al mondo. La Bugatti più esclusiva mai creata.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bolide -->
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <div class="team-member">
+          <div class="member-img">
+            <img src="assets/img/bolid.jpg" class="img-fluid" alt="Bugatti Bolide">
+          </div>
+          <div class="member-info">
+            <h4>Bugatti Bolide</h4>
+            <span>Prestazioni estreme per la pista, un'auto da sogno per pochi eletti.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section><!-- /Bugatti Cars Section -->
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contatti</h2>
+    <p>Contatta Bugatti per informazioni su modelli esclusivi e servizi personalizzati.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Indirizzo</h3>
+            <p>1 Château Saint-Jean, 67120 Dorlisheim, Francia</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Telefono</h3>
+            <p>+33 388 04 56 00</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:info@bugatti.com">info@bugatti.com</a></p>
+          </div>
+        </div><!-- End Info Item -->
+
+      </div>
+
+      <div class="col-lg-8">
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Il tuo nome" required="">
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="La tua email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Oggetto" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Messaggio" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Caricamento...</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Il tuo messaggio è stato inviato. Grazie!</div>
+
+              <button type="submit">Invia Messaggio</button>
+            </div>
+
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Contact Section -->
+
+</main>
+
+<footer id="footer" class="footer dark-background">
+  <div class="container">
+    <h3 class="sitename">Bugatti</h3>
+    <p>Eleganza, performance e innovazione: la tradizione di Bugatti continua a Molsheim.</p>
+    <div class="social-links d-flex justify-content-center">
+      <a href="https://twitter.com/Bugatti" target="_blank"><i class="bi bi-twitter"></i></a>
+      <a href="https://www.facebook.com/Bugatti" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/bugatti" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/bugatti" target="_blank"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <span>&copy; 2025</span> <strong class="px-1 sitename">Bugatti</strong> <span>Tutti i diritti riservati</span>
+      </div>
+      <div class="credits">
+        Progettato da <a href="assets/img/niero.jpg">Javed Haseeb</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

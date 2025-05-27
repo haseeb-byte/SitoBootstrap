@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bugatti Dubai</title>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    body {
+      background-color: #f3f4f6;
+      color: #222;
+    }
+
+    .breadcrumbs {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #000000, #0d1b39);
+      color: white;
+      text-align: center;
+    }
+
+    .breadcrumbs h2 {
+      font-weight: 900;
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ffd700, #00bfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      text-shadow:
+        0 0 5px rgba(255, 215, 0, 0.7),
+        0 0 10px rgba(0, 191, 255, 0.7);
+    }
+
+    .breadcrumbs p {
+      color: #a0c8ff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-shadow: 0 0 3px rgba(0, 191, 255, 0.4);
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    #map:hover {
+      transform: scale(1.01);
+    }
+
+    .dealer-img {
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      max-width: 110%;
+    }
+
+    .dealer-img:hover {
+      transform: scale(1.02);
+    }
+
+    .dealer-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .dealer-box:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .list-unstyled li {
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .list-unstyled li:hover {
+      transform: translateX(5px);
+      color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="breadcrumbs d-flex align-items-center">
+    <div class="container" data-aos="fade-in">
+      <h2 class="display-5 fw-bold">Bugatti Dubai</h2>
+      <p>Showroom esclusivo Bugatti a Dubai, Emirati Arabi Uniti</p>
+    </div>
+  </section>
+
+  <section class="inner-page">
+    <div class="container py-5">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+          <img src="assets/img/dubai.jpg" alt="Showroom Bugatti Dubai" class="dealer-img img-fluid rounded shadow-sm" />
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <div class="dealer-box">
+            <h3 class="mb-3">Informazioni sul Concessionario</h3>
+            <p><strong>📍 Posizione:</strong> Alserkal Avenue, Al Quoz, Dubai, Emirati Arabi Uniti</p>
+            <p><strong>🏢 Gestito da:</strong> Bugatti Dubai</p>
+            <p>Uno showroom all’avanguardia situato nel cuore di Dubai, che offre esperienze su misura per i clienti di lusso
+              e accesso esclusivo ai modelli Bugatti più ambiti.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row gy-5 mt-5">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="150">
+          <h4 class="mb-3">🛠️ Servizi Offerti</h4>
+          <ul class="list-unstyled fs-5">
+            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Vendita e prenotazione modelli Bugatti</li>
+            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Personalizzazione Bespoke</li>
+            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Manutenzione certificata</li>
+            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Eventi esclusivi per clienti</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+          <h4 class="mb-3">🗺️ Dove Trovarci</h4>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer mt-5 bg-dark text-white py-4 text-center">
+    &copy; 2025 <strong>Bugatti</strong> | Concessionario ufficiale a Dubai
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const coords = [25.128392, 55.223981]; // Dubai Alserkal Avenue
+    const map = L.map("map").setView(coords, 15);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+    }).addTo(map);
+
+    L.marker(coords).addTo(map).bindPopup("<b>Bugatti Dubai</b>").openPopup();
+  </script>
+</body>
+
+</html>
